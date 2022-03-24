@@ -1,10 +1,10 @@
 package com.example.tmdbapp.exo
 
-import com.example.tmdbapp.BuildConfig
+import com.intuit.sdp.BuildConfig.APPLICATION_ID
 
 
 object Constants {
-    const val EXO_PLAYER_USER_AGENT = BuildConfig.APPLICATION_ID
+    const val EXO_PLAYER_USER_AGENT = APPLICATION_ID
     const val EXO_PLAYER_VIDEO_CACHE_DURATION = 10 * 1024 * 1024
     const val EXO_PLAYER_PROGRESSIVE_SAMPLE_URL =
         "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
