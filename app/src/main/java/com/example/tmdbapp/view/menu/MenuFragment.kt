@@ -64,7 +64,7 @@ class MenuFragment : BaseFragment<FragmentMenuBinding>(R.layout.fragment_menu) {
     }
 
     private fun tvList() {
-        serieVM.apiTv.observe(viewLifecycleOwner, {
+        serieVM.apiTv.observe(viewLifecycleOwner) {
             when (it.status) {
                 Status.SUCCESS -> {
                     seriesAdapter = SeriesAdapter(requireContext(), it.data!!.results)
@@ -80,12 +80,12 @@ class MenuFragment : BaseFragment<FragmentMenuBinding>(R.layout.fragment_menu) {
                 Status.ERROR -> e { "error" }
                 Status.LOADING -> i { "Search Loading" }
             }
-        })
+        }
         serieVM.getTVList()
     }
 
     private fun movieList() {
-        movieVM.apiMovie.observe(viewLifecycleOwner, {
+        movieVM.apiMovie.observe(viewLifecycleOwner) {
             when (it.status) {
                 Status.SUCCESS -> {
                     moviesAdapter = MoviesAdapter(requireContext(), it.data!!.results)
@@ -102,7 +102,7 @@ class MenuFragment : BaseFragment<FragmentMenuBinding>(R.layout.fragment_menu) {
                 Status.ERROR -> e { "error" }
                 Status.LOADING -> i { "Search Loading" }
             }
-        })
+        }
         movieVM.getMoviesList()
     }
 
