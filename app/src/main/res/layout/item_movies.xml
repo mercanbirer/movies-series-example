@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="movie"
+            type="com.example.tmdbapp.model.Result" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="@dimen/_70sdp"
+        android:layout_height="@dimen/_114sdp"
+        android:background="@drawable/movie_poster_selector"
+        android:stateListAnimator="@drawable/animator_vod_gridview">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/itemMoviePoster"
+            android:layout_width="@dimen/_70sdp"
+            android:layout_height="@dimen/_101sdp"
+            android:scaleType="fitXY"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="@dimen/_70sdp"
+            android:layout_height="@dimen/_14sdp"
+            android:ellipsize="marquee"
+            android:gravity="center_horizontal|center_vertical"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:singleLine="true"
+            android:text="@{movie.title}"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/itemMoviePoster" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

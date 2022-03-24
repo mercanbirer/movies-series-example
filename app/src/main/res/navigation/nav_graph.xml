@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/menuFragment">
+
+    <fragment
+        android:id="@+id/menuFragment"
+        android:name="com.example.tmdbapp.view.menu.MenuFragment"
+        android:label="MenuFragment"
+        tools:layout="@layout/fragment_menu">
+        <action
+            android:id="@+id/action_menuFragment_to_seriesInfoFragment"
+            app:destination="@id/seriesInfoFragment" />
+        <action
+            android:id="@+id/action_menuFragment_to_movieInfoFragment"
+            app:destination="@id/movieInfoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/seriesInfoFragment"
+        android:name="com.example.tmdbapp.view.serie.serieinfo.SeriesInfoFragment"
+        android:label="SeriesInfoFragment"
+        tools:layout="@layout/fragment_series_info">
+        <action
+            android:id="@+id/action_seriesInfoFragment_to_serieExoPlayerFragment"
+            app:destination="@id/serieExoPlayerFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/movieInfoFragment"
+        android:name="com.example.tmdbapp.view.movie.movieinfo.MovieInfoFragment"
+        android:label="MovieInfoFragment"
+        tools:layout="@layout/fragment_movie_info">
+        <action
+            android:id="@+id/action_movieInfoFragment_to_movieExoPlayerFragment"
+            app:destination="@id/movieExoPlayerFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/movieExoPlayerFragment"
+        android:name="com.example.tmdbapp.view.movie.MovieExoPlayerFragment"
+        android:label="MovieExoPlayerFragment"
+        tools:layout="@layout/fragment_movies_exoplayer" />
+    <fragment
+        android:id="@+id/serieExoPlayerFragment"
+        android:name="com.example.tmdbapp.view.serie.SerieExoPlayerFragment"
+        android:label="SerieExoPlayerFragment"
+        tools:layout="@layout/fragment_series_exoplayer" />
+</navigation>

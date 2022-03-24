@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">TMDBApp</string>
+    <string name="mov_es">MOVIES</string>
+    <string name="TV">TV</string>
+    <string name="series">Series</string>
+    <string name="play">Play</string>
+</resources>
