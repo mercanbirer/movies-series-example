@@ -35,10 +35,8 @@ class MovieVM @Inject constructor(
             viewModelScope.launch {
                 moviesRepository.getMovie().collect {
                     if (it.status == Status.SUCCESS) {
-                        e { "denememe" }
                         apiMovie.postValue(it)
                     } else if (it.status == Status.ERROR) {
-                        e { "patladı ${it.throwable}" }
                     }
 
                 }
@@ -55,9 +53,7 @@ class MovieVM @Inject constructor(
                 moviesRepository.getDetail(movieId).collect {
                     if (it.status == Status.SUCCESS) {
                         movieDetail.postValue(Resource.success(it.data!!.body()))
-                        e { "detaildeneme" }
                     } else if (it.status == Status.ERROR) {
-                        e { "patladıdetail ${it.throwable}" }
                     }
 
                 }
